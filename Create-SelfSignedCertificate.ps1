@@ -86,10 +86,15 @@ function CreateSelfSignedCertificate {
     $_ExportPfxCertificate = Export-PfxCertificate -Cert $cert -Password $Password -FilePath "$($CommonName).pfx"
     $_ExportCertificate = Export-Certificate -Cert $cert -Type CERT -FilePath "$CommonName.cer"
 
-    Write-Host "Certificates: " -ForegroundColor Green
-    Write-Host "- $($CommonName).pfx" -ForegroundColor Green
-    Write-Host "- $($CommonName).cer" -ForegroundColor Green
-    Write-Host "expoted to the $($PSScriptRoot) folder." -ForegroundColor Green
+    Write-Host "Certificates: " -NoNewline
+    Write-Host "$($CommonName).pfx" -ForegroundColor Green -NoNewline
+    Write-Host " and: " -NoNewline
+    Write-Host "$($CommonName).cer" -ForegroundColor Green -NoNewline
+    Write-Host " exported to the $($PSScriptRoot) folder."
+    
+    Write-Host "Certificate thumbprint: " -NoNewline
+    Write-Host "$($cert.Thumbprint)" -ForegroundColor Green -NoNewline
+    Write-Host "."
 
     if($RemoveCert)
     {
