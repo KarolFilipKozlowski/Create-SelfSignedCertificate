@@ -4,7 +4,7 @@ Creates a Self-Signed Certificate for use in server to server authentication.
 Script will generate certificate, which add can be installed in local computer certificate store (personal folder). Also, will export certificate to run folder by saving them as *.pfx and .cer.
 
 ## How-to:
-Just run the **Create-SelfSignedCertificate.ps1**. 
+Just run with **administrator privilege** the `Create-SelfSignedCertificate.ps1`. 
 
 ## Create-SelfSignedCertificate.ps1 parameters:
 `-CommonName` - Certificate name.
