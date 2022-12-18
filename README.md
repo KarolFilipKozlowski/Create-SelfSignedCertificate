@@ -1,20 +1,15 @@
 ## Create new certificate
-Creates a Self Signed Certificate for use in server to server authentication:
+Creates a Self-Signed Certificate for use in server to server authentication. 
+## About script:
+Script will generate certificate, which add can be installed in local computer certificate store (personal folder). Also, will export certificate to run folder by saving them as *.pfx and .cer.
 
-### EXAMPLE
+## How-to:
+Just run the **Create-SelfSignedCertificate.ps1**. 
 
-`.\Create-SelfSignedCertificate.ps1 -CommonName "MyCert" -StartDate 2015-11-21 -EndDate 2017-11-21`
-
-This will create a new self signed certificate with the common name "CN=MyCert". During creation you will be asked to provide a password to protect the private key.
-
-### EXAMPLE
-
-`.\Create-SelfSignedCertificate.ps1 -CommonName "MyCert" -StartDate 2015-11-21 -EndDate 2017-11-21 -Password (ConvertTo-SecureString -String "MyPassword" -AsPlainText -Force)`
-
-This will create a new self signed certificate with the common name "CN=MyCert". The password as specified in the Password parameter will be used to protect the private key
-
-### EXAMPLE
-
-`.\Create-SelfSignedCertificate.ps1 -CommonName "MyCert" -StartDate 2015-11-21 -EndDate 2017-11-21 -Force`
-
-This will create a new self signed certificate with the common name "CN=MyCert". During creation you will be asked to provide a password to protect the private key. If there is already a certificate with the common name you specified, it will be removed first.
+## Create-SelfSignedCertificate.ps1 parameters:
+`-CommonName` - Certificate name.
+`-StartDate` - Date from when the certificate is valid *(yyyy-mm-dd, default today)*.
+`-EndDate` - Date until when the certificate is valid *(yyyy-mm-dd, default today +1 year)*.
+`-Password` - Certificate password.
+`-RemoveCert` - Remove the certificate from your compute *(default: no)*?
+`-Overwrite` - Overwrite the certificate *(default: yes)*?
