@@ -8,8 +8,13 @@ Just run with **administrator privilege** the `Create-SelfSignedCertificate.ps1`
 
 ## Create-SelfSignedCertificate.ps1 parameters:
 `-CommonName` - Certificate name.
+
 `-StartDate` - Date from when the certificate is valid *(yyyy-mm-dd, default today)*.
+
 `-EndDate` - Date until when the certificate is valid *(yyyy-mm-dd, default today +1 year)*.
+
 `-Password` - Certificate password.
+
 `-RemoveCert` - Remove the certificate from your compute *(default: no)*?
+
 `-Overwrite` - Overwrite the certificate *(default: yes)*?
